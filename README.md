@@ -74,6 +74,26 @@ I try to use 300,000 images to recognize the motion of Ezreal. To figure out the
 
 # 1. Data
 
-I make use of 300,000 images on it to predict the movement.
+I respectively make use of 300,000 images on it to predict the movement.
+- Used parser or tf.run.flags to insert width, height, and filename
+- Used cv2 to take each 300,000 pictures(width = 331, height = 331)
+- Saved those pictures with np.save
+
+
+# 2. Model 
+
+:Used AWS to use GPU that has p2.x2large to operate model. I have used 6341 epochs on NASNetLarge.
+
+![15](./git/15.png) 
+
+# 3. Tensorboard
+
+![5](./git/5.png)
+
+# 4. Result - Ezreal tends to move to rightside on a horizontal map
+
+[![Watch the video](./git/11.png)](https://www.youtube.com/watch?v=qrJkvGzGvkE&feature=youtu.be)
+
+
 
 
