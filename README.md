@@ -62,11 +62,11 @@ I respectively save 500 images of Tower, Minion, and Ezreal on League of Legends
 [![Watch the video](https://www.youtube.com/embed/6Az2cNU7gUw)](https://www.youtube.com/watch?v=qrJkvGzGvkE&feature=youtu.be)
 
 
-# LEVEL 2 - Predict the enemies' movement 
+# LEVEL 2 - Predict the movement of enemy while grabing it 
 
 If we can detect the object, Ezreal, Tower, and Enemy, we might detect the motion of object. For example, when we use Blitz or Thresh, we are able to grab the enemy based on the prediction of movement.
 
-# How to predict the enemies' movement
+# How to predict its movement
 
 I try to use 300,000 images to recognize the motion of Ezreal. To figure out the motion of Ezreal, I might as well know the pattern of movement. For example, an object, Ezreal, moves anywhere 360 degree but that is depending on the shape of map. if a map is horizontal, which is that it can move to right to left side or left to right side, the object has two ways to avoid the skills upside and downside. Otherwise, if a map is vertical, it has also two ways to shy away from the grabs rightside and leftside. I make use of this method on the Classification.
 
