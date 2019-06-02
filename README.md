@@ -1,4 +1,4 @@
-# Shoot "Auto Q skills" on the enemy on Image Recognition
+# Level 1 - Shoot "Auto Q skills" on the enemy on Image Recognition
 
 Based on the image recognition, the model that I create with 1,500 pictures is able to detect the enemy on League of Legends and makes ezreal shot "Q" to the enemy on the coordinate of x and y axis. 
 
@@ -60,5 +60,17 @@ I respectively save 500 images of Tower, Minion, and Ezreal on League of Legends
 
 
 [![Watch the video](https://www.youtube.com/embed/6Az2cNU7gUw)](https://www.youtube.com/watch?v=qrJkvGzGvkE&feature=youtu.be)
+
+
+# LEVEL 2 - Predict the enemies' movement 
+
+If we can detect the object, Ezreal, Tower, and Enemy, we might detect the motion of object. For example, when we use Blitz or Thresh, we are able to grab the enemy based on the prediction of movement.
+
+# How to predict the enemies' movement
+
+I try to use 100,000 images to recognize the motion of Ezreal. Ezreal moves anywhere 360 degree but that is depending on the shape of map.
+
+![12](./git/12.png)
+
 
 
