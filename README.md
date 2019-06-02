@@ -68,9 +68,9 @@ If we can detect the object, Ezreal, Tower, and Enemy, we might detect the motio
 
 # How to predict the enemies' movement
 
-I try to use 100,000 images to recognize the motion of Ezreal. Ezreal moves anywhere 360 degree but that is depending on the shape of map.
+I try to use 300,000 images to recognize the motion of Ezreal. Ezreal moves anywhere 360 degree but that is depending on the shape of map. Map A, attached, has two ways to avoid the skills rightside and leftside. Otherwise, Map B, below has also two ways to shy away from the grabs upside and downside. I make use of this method on the Classification.
 
-![12](./git/12.png)
+![12](./git/12.png) ![12](./git/13.png) ![12](./git/14.png)
 
 
 
