@@ -1,4 +1,5 @@
-# Level 1 - Shoot "Auto Q skills" on the enemy on Image Recognition
+# AI. Level 1 - Shooting Mode
+- Shoot "Auto Q skills" on the enemy on Image Recognition
 
 Based on the image recognition, the model that I create with 1,500 pictures is able to detect the enemy on League of Legends and makes ezreal shot "Q" to the enemy on the coordinate of x and y axis. 
 
@@ -62,7 +63,8 @@ I respectively save 500 images of Tower, Minion, and Ezreal on League of Legends
 [![Watch the video](https://www.youtube.com/embed/6Az2cNU7gUw)](https://www.youtube.com/watch?v=qrJkvGzGvkE&feature=youtu.be)
 
 
-# LEVEL 2 - Predict the movement of enemy while grabing it 
+# AI. LEVEL 2 - Movement Prediction Mode
+- Predict the movement of enemy while grabing or shooting the enemy  
 
 If we can detect the object, Ezreal, Tower, and Enemy, we might detect the motion of object. For example, when we use Blitz or Thresh, we are able to grab the enemy based on the prediction of movement.
 
@@ -76,13 +78,13 @@ I try to use 300,000 images to recognize the motion of Ezreal. To figure out the
 
 I respectively make use of 300,000 images on it to predict the movement.
 - Used parser or tf.run.flags to insert width, height, and filename
-- Used cv2 to take each 300,000 pictures(width = 331, height = 331)
+- Used cv2 to take each 300,000 pictures(For NASNetLarge, Used width = 331, height = 331)
 - Saved those pictures with np.save
 
 
 # 2. Model 
 
-:Used AWS to use GPU that has p2.x2large to operate model. I have used 6341 epochs on NASNetLarge.
+:Based on AWS to use GPU. I have used 6341 epochs on NASNetLarge.
 
 ![15](./git/15.png) 
 
@@ -93,6 +95,33 @@ I respectively make use of 300,000 images on it to predict the movement.
 # 4. Result - Ezreal tends to move to rightside on a horizontal map
 
 [![Watch the video](./git/11.png)](https://www.youtube.com/watch?v=qrJkvGzGvkE&feature=youtu.be)
+
+# AI. LEVEL 3 - Auto New Model Creation Mode 
+- Depending on the player or enemy, the movement is different. Thus, tunning the model
+
+Given that, If the object, Ezreal, is detected, Automatically this AI takes pictures 100,000 on it while having more than 70% of Probablilty and less than 95% of Probability on the file. Thus, if a new model, better accuracy and flexibility, is able to be created. 
+
+# 1. Data
+
+I make use of 100,000 images, which has been automatically taken + the previous pictures and arrays to create a new model, which has better accuracy and flexibility. 
+
+- Used parser or tf.run.flags to insert width, height, and filename
+- Used cv2 to take each 500 pictures
+
+# 2. Model 
+
+:Based on AWS to use GPU. I have used 9,432 epochs on Resnet50.
+
+![4](./git/16.png)
+
+# 3. Tensorboard(the function of early stopping is in the file, model.py) 
+
+![5](./git/17.png)
+
+# 4. Result - Better Accuracy Comparing with AI. LEVEL 1.
+
+[![Watch the video](./git/11.png)](https://www.youtube.com/watch?v=qrJkvGzGvkE&feature=youtu.be)
+
 
 
 
