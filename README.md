@@ -1,5 +1,6 @@
 
-# Location -> Opponent's Behavior -> Automation
+# Order
+- Location -> Opponent's Behavior -> Automation
 
 # Shooting Mode
 - Shoot "Auto Q skills" on the enemy on Image Recognition
