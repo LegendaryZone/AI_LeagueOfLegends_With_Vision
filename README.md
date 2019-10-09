@@ -1,6 +1,7 @@
-
-# Order
-- Location -> Opponent's Behavior -> Automation
+# League Of Legends Automation
+- Gather the Data of Opponent's Behavior 
+- Create another Model 					 
+- Automation 							 
 
 # Shooting Mode
 - Shoot "Auto Q skills" on the enemy on Image Recognition
