@@ -128,9 +128,23 @@ def main(_):
 
 	#data
 	x_train, y_train, x_eval, y_eval = Load_Image(path + FLAGS.filename).__build__()
-	print(y_train.shape)
-	print(x_train.shape)
-	#TB
+	# tf.data.Dataset
+	# features = []
+	# labels = []
+	# data = np.load(path + FLAGS.filename)
+	# for x_data, y_data in data:
+	# 	features.append(x_data)
+	# 	labels.append(y_data)
+	# features, labels = np.array(features), np.array(labels)
+
+	# features_placeholder = tf.placeholder(tf.int32, features.shape)
+	# labels_placeholder = tf.placeholder(tf.int32, labels.shape)
+	# dataset = tf.data.Dataset.from_tensor_slices((features_placeholder, labels_placeholder))
+	# iterator = dataset.make_initializable_iterator()
+	# sess.run(iterator.initializer, feed_dict={features_placeholder: features,
+ 	#                                         labels_placeholder: labels})
+ 	
+	# #TB
 	writer = tf.summary.FileWriter(FLAGS.TB_CP)
 	writer.add_graph(sess.graph)
 	global_step = 0
@@ -203,3 +217,8 @@ def main(_):
 	
 if __name__ == "__main__":
 	tf.app.run()
+
+
+
+# recognize the enemy or team and take coords
+# shoot the missle to enemy automatically with pyautogui 

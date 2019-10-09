@@ -74,6 +74,45 @@ class Load_Image:
 
 		return x_train, y_train, x_eval, y_eval
 
+	def dataset(filename):
+
+		data = np.load(filename)
+
+		image_data = []
+		label_data = []
+
+		for x_data, y_data in data:
+			image_data.append(x_data)
+			label_data.append(y_data)
+
+		image_data, label_data = np.array(image_data), np.array(label_data).reshape(-1,1)
+		print(";;;;;", image_data.shape)
+
+		image_data = np.array(image_data).reshape(len(image_data[-1,:]))
+		print(";;;;;", image_data.shape)
+		image_data = np.array([i for i in image_data])
+		print(";;;;;", image_data.shape)
+
+		encoder = OneHotEncoder()
+		encoder.fit(label_data)
+
+		label_data = encoder.transform(label_data).toarray()
+
+		date_set =[]
+		date_set.append([image_data, label_data])
+
+		train_size = round(int(len(date_set) *0.8))
+		train_data = date_set[0:train_size]
+		test_data = date_set[train_size:]
+
+		x_train = image_data[0:train_size]
+		y_train = label_data[0:train_size]
+		x_test = image_data[train_size:]
+		x_test = image_data[train_size:]
+
+		return image_data, label_data, train_data, test_data
+
 
 if __name__ == "__main__":
+	Load_Image.dataset(filename)
 	x_train, y_train, x_eval, y_eval = Load_Image(filename = filename).__build__()

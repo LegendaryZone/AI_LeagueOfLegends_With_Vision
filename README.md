@@ -1,3 +1,6 @@
+
+# Location -> Opponent's Behavior -> Automation
+
 # Shooting Mode
 - Shoot "Auto Q skills" on the enemy on Image Recognition
 
@@ -68,7 +71,7 @@ I respectively save 2,500 images of Tower, Minion, and Ezreal on League of Legen
 
 If we can detect the object, Ezreal, Tower, and Enemy, we might detect the motion of object. For example, when we use Blitz or Thresh, we are able to grab the enemy based on the prediction of movement.
 
-# How to predict its movement
+# Figure Out The Opponent's Behavior
 
 I try to use 3,000 images to recognize the motion of Ezreal. To figure out the motion of Ezreal, I might as well know the pattern of movement. For example, an object, Ezreal, moves anywhere 360 degree but that is depending on the shape of map. if a map is horizontal, which is that it can move to right to left side or left to right side, the object has two ways to avoid the skills upside and downside. Otherwise, if a map is vertical, it has also two ways to shy away from the grabs rightside and leftside. I make use of this method on the Classification.
 

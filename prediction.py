@@ -29,6 +29,10 @@ parser.add_argument("--EPOCHS",
     type = int,
     default = 10,
     help = "Width")
+parser.add_argument("--number_of_class",
+    type = int,
+    default = 10,
+    help = "Width")
 
 args = parser.parse_args()
 
@@ -37,11 +41,12 @@ width = args.width
 height = args.height
 EPOCHS = args.EPOCHS
 BATCH_SIZE = args.BATCH_SIZE
+number_of_class = args.number_of_class
 
 batch_size = tf.placeholder(tf.int64)
 
 x = tf.placeholder(tf.float32, [None, args.width, args.height, 3])
-y = tf.placeholder(tf.int32, [None, 3])
+y = tf.placeholder(tf.int32, [None, number_of_class])
 
 train_dataset = tf.data.Dataset.from_tensor_slices((x,y)).batch(batch_size).repeat()
 test_dataset = tf.data.Dataset.from_tensor_slices((x,y)).batch(batch_size) # always batch even if you want to one shot it
@@ -55,10 +60,10 @@ features, labels = iter.get_next()
 train_init_op = iter.make_initializer(train_dataset)
 test_init_op = iter.make_initializer(test_dataset)
 
-flatten = tf.reshape(features, [-1, 224*224*3])
+flatten = tf.reshape(features, [-1, width*height*3])
 net = tf.layers.dense(flatten, 8, activation=tf.tanh) # pass the first value from iter.get_next() as input
 net = tf.layers.dense(net, 8, activation=tf.tanh)
-prediction = tf.layers.dense(net, 3, activation=tf.tanh)
+prediction = tf.layers.dense(net, number_of_class, activation=tf.tanh)
 print("prediction", prediction)
 
 loss = tf.losses.mean_squared_error(prediction, labels) # pass the second value from iter.get_net() as label

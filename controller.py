@@ -1,21 +1,4 @@
-######## Picamera Object Detection Using Tensorflow Classifier #########
-#
-# Author: Evan Juras
-# Date: 4/15/18
-# Description: 
-# This program uses a TensorFlow classifier to perform object detection.
-# It loads the classifier uses it to perform object detection on a Picamera feed.
-# It draws boxes and scores around the objects of interest in each frame from
-# the Picamera. It also can be used with a webcam by adding "--usbcam"
-# when executing this script from the terminal.
 
-## Some of the code is copied from Google's example at
-## https://github.com/tensorflow/models/blob/master/research/object_detection/object_detection_tutorial.ipynb
-
-## and some is copied from Dat Tran's example at
-## https://github.com/datitran/object_detector_app/blob/master/object_detection_app.py
-
-## but I changed it to make it more understandable to me.
 
 from PIL import ImageGrab
 import numpy as np
@@ -49,15 +32,7 @@ STD_DIMENSIONS =  {
     "4k": (3840, 2160),
 }
 
-# Select camera type (if user enters --usbcam when calling this script,
-# a USB webcam will be used)
-#camera_type = 'picamera'
-#parser = argparse.ArgumentParser()
-#parser.add_argument('--usbcam', help='Use a USB webcam instead of picamera',
-#                    action='store_true')
-#args = parser.parse_args()
-#if args.usbcam:
-#    camera_type = 'usb'
+
 
 # This is needed since the working directory is the object_detection folder.
 sys.path.append('..')
@@ -165,7 +140,7 @@ while True:
         (boxes, scores, classes, num) = sess.run(
             [detection_boxes, detection_scores, detection_classes, num_detections],
             feed_dict={image_tensor: frame_expanded})
-        print(scores)
+        # print(scores)
 
 
         # Draw the results of the detection (aka 'visulaize the results')
@@ -184,7 +159,8 @@ while True:
 
         elif pyautogui.moveTo(x_coord + x2_coord, y_coord + y2_coord):
             pyautogui.press("q")
-            print("q pressed")
+            print("An enemy detected")
+            print("press "Q" on the coordinate {},{}".format(x_coord + x2_coord, y_coord + y2_coord))
             
         # print("frame:", frame, "\nclasses:", np.squeeze(classes).astype(np.int32), "\nboxes:", np.squeeze(boxes))
 
