@@ -93,13 +93,10 @@ I respectively make use of 3,000 images on it to predict the movement.
 
 ![15](./git/15.png) 
 
-# 3. Tensorboard
 
-![5](./git/5.png)
 
-# 4. Result - Ezreal tends to move to rightside on a horizontal map
+# 3. Result - Ezreal tends to move to rightside on a horizontal map
 
-[![Watch the video](./git/11.png)](https://www.youtube.com/watch?v=qrJkvGzGvkE&feature=youtu.be)
 
 # Auto New Model Creation Mode 
 - Depending on the player or enemy, the movement is different. Thus, tunning the model
