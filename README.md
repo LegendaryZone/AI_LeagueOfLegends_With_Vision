@@ -33,9 +33,11 @@ I respectively save 2,500 images of Tower, Minion, and Ezreal on League of Legen
 
 [![Watch the video](./git/11.png)](https://www.youtube.com/watch?v=qrJkvGzGvkE&feature=youtu.be)
 
-# 5. OpenCV
+# 5. OpenCV 
 
-![5](./git/20.png)
+:In the result, frequently lulu was represented as my team like the below picture. In order to make it better accuracy, HoughLineP has been used for having the red line compared with green line represents my team. 
+
+![5](./git/22.png)
 
 # Installation
 
