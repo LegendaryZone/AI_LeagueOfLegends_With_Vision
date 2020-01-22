@@ -35,7 +35,7 @@ I respectively save 2,500 images of Tower, Minion, and Ezreal on League of Legen
 
 # 5. OpenCV 
 
-In the result, frequently lulu was represented as my team like the below picture. In order to make it better accuracy, HoughLineP has been used in order to figure out whether the object is an enemy or not having the red line compared with green line represents my team. 
+In the result, frequently lulu was represented as my team like the below picture. In order to make it better accuracy, HoughLineP is used in order to figure out whether the object is an enemy or not, having the red line, which is stamina, compared with the green line represents my team. 
 
 ![5](./git/22.png)
 
